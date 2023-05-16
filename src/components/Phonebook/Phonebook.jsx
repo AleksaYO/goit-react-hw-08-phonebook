@@ -1,10 +1,10 @@
-import { PhonebookList } from './PhonebookList';
-import { Form } from './Form';
-import { Filter } from './Filter';
+import PhonebookList from './PhonebookList';
+import Form from './Form';
+import Filter from './Filter';
 import { useSelector } from 'react-redux';
 import { getContacts } from 'redux/selectors';
 
-export function Phonebook() {
+function Phonebook() {
   const contacts = useSelector(getContacts);
 
   return (
@@ -15,3 +15,5 @@ export function Phonebook() {
     </>
   );
 }
+
+export default Phonebook;

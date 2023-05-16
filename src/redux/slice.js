@@ -1,7 +1,7 @@
 import { initialState } from './initialState';
 import { createSlice, isAnyOf } from '@reduxjs/toolkit';
 import { fetchAll, fetchCreate, fetchDelete } from './operations';
-import { register } from './auth/operations';
+import { logOut } from './auth/operations';
 import Notiflix from 'notiflix';
 
 const getContacts = (state, { payload }) => {
@@ -46,6 +46,9 @@ const phonebookSlice = createSlice({
   extraReducers: builder =>
     builder
       .addCase(fetchAll.fulfilled, getContacts)
+      .addCase(logOut.fulfilled, state => {
+        state.contacts.items = [];
+      })
       .addCase(fetchCreate.fulfilled, createContact)
       .addCase(fetchDelete.fulfilled, deleteContact)
       .addMatcher(isAnyOf(...fetchesPending), pendingContact)

@@ -1,0 +1,23 @@
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 400px;
+  margin: 100px auto;
+  text-align: center;
+  background-color: #232b2b;
+  border-radius: 5px;
+  padding: 15px;
+  gap: 30px;
+  height: 200px;
+}
+
+.title {
+  color: rgb(222, 222, 222);
+  margin: 0;
+}
+
+.link {
+  color: #00a97f;
+}

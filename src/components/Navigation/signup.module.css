@@ -1,99 +1,3 @@
-/* Указываем box sizing */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-/* Убираем внутренние отступы */
-ul[class],
-ol[class] {
-  padding: 0;
-}
-
-/* Убираем внешние отступы */
-body,
-h1,
-h2,
-h3,
-h4,
-p,
-ul[class],
-ol[class],
-li,
-figure,
-figcaption,
-blockquote,
-dl,
-dd {
-  margin: 0;
-}
-
-/* Выставляем основные настройки по-умолчанию для body */
-body {
-  min-height: 100vh;
-  scroll-behavior: smooth;
-  text-rendering: optimizeSpeed;
-  line-height: 1.5;
-}
-
-/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
-ul[class],
-ol[class] {
-  list-style: none;
-}
-
-/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
-a:not([class]) {
-  text-decoration-skip-ink: auto;
-}
-
-/* Упрощаем работу с изображениями */
-img {
-  max-width: 100%;
-  display: block;
-}
-
-/* Указываем понятную периодичность в потоке данных у article*/
-article > * + * {
-  margin-top: 1em;
-}
-
-/* Наследуем шрифты для инпутов и кнопок */
-input,
-button,
-textarea,
-select {
-  font: inherit;
-}
-
-/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
-
-/* .form {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  margin-bottom: 20px;
-}
-.label {
-  display: flex;
-  flex-direction: column;
-}
-.input {
-  width: 300px;
-}
-.btn {
-  width: 300px;
-} */
-
 .form {
   display: flex;
   flex-direction: column;
@@ -101,34 +5,21 @@ select {
   justify-content: center;
   gap: 20px;
 }
-.input {
-  width: 200px;
+
+.text {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .label {
   display: flex;
   flex-direction: column;
 }
-
-.label {
-  color: white;
-}
-
-.filter {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  margin-bottom: 20px;
-}
-.list {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.list > li {
-  list-style: disc;
-  margin-left: 20px;
-}
+/* .btn {
+  width: 100px;
+} */
 
 .btn {
   --color: #00a97f;
@@ -187,10 +78,30 @@ select {
   transform: scale(0.98);
 }
 
+.info {
+  color: white;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.link {
+  color: #00a97f;
+  display: flex;
+  width: 50px;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+/* ///// */
+
 .login-box {
   position: absolute;
   top: 30%;
-  left: 30%;
+  left: 50%;
   width: 400px;
   padding: 40px;
   transform: translate(-50%, -50%);
@@ -203,6 +114,10 @@ select {
 .login-box .user-box {
   position: relative;
   width: 100%;
+}
+
+.text {
+  color: white;
 }
 
 .login-box .user-box input {
@@ -274,5 +189,3 @@ select {
   background: linear-gradient(90deg, transparent, #03f40f);
   animation: btn-anim1 2s linear infinite;
 }
-
-/* //////// */

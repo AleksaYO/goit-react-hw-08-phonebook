@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { logIn } from 'redux/auth/operations';
+import css from './LogIn.module.css';
 
-export const LogIn = () => {
+const LogIn = () => {
   const dispatch = useDispatch();
   const navigateTo = useNavigate();
 
@@ -23,22 +24,43 @@ export const LogIn = () => {
   };
 
   return (
-    <form onSubmit={onSubmit}>
-      <label htmlFor="">
-        Email
-        <input onChange={onChange} type="text" name="email" value={email} />
-      </label>
-      <label htmlFor="">
-        Password
-        <input
-          onChange={onChange}
-          type="text"
-          name="password"
-          value={password}
-        />
-      </label>
-
-      <button type="submit">LogIn</button>
-    </form>
+    <>
+      <div className={css['login-box']}>
+        <form onSubmit={onSubmit}>
+          <div className={css['user-box']}>
+            <input
+              onChange={onChange}
+              type="text"
+              name="email"
+              required=""
+              value={email}
+              autoComplete="off"
+            />
+            <label>Email</label>
+          </div>
+          <div className={css['user-box']}>
+            <input
+              onChange={onChange}
+              type="password"
+              name="password"
+              required=""
+              value={password}
+            />
+            <label>Password</label>
+          </div>
+          <center>
+            <button type="submit" className={css.btn}>
+              SUBMIT
+            </button>
+          </center>
+        </form>
+        <p className={css.info}>No account? </p>
+        <Link className={css.link} to="/signUp">
+          SignUp
+        </Link>
+      </div>
+    </>
   );
 };
+
+export default LogIn;
