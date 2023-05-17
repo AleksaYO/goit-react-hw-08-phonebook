@@ -22,15 +22,12 @@ function Filter({ filter }) {
       <input
         onInput={e => dispatch(filteredContacts(e.target.value))}
         className={css['form__field']}
-        name="text"
+        name="name"
         type="text"
-        placeholder="Name"
+        placeholder="Search by name"
         required=""
         value={filter}
       />
-      <label for="name" className={css['form__label']}>
-        Search by name
-      </label>
     </div>
   );
 }

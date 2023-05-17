@@ -94,6 +94,13 @@ select {
   width: 300px;
 } */
 
+.wrapper {
+  display: flex;
+  gap: 70px;
+  justify-content: center;
+  margin-top: 200px;
+}
+
 .form {
   display: flex;
   flex-direction: column;
@@ -188,8 +195,6 @@ select {
 }
 
 .login-box {
-  margin-top: 130px;
-  margin-left: 800px;
   width: 400px;
   padding: 40px;
   background: #232b2b;

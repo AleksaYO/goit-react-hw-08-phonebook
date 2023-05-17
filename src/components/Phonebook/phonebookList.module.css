@@ -10,12 +10,8 @@
 .list {
   display: flex;
   width: 400px;
-  position: absolute;
   flex-direction: column;
   gap: 10px;
-  top: 22%;
-  left: 60%;
-  transform: translate(-50%, -50%);
 }
 
 .delete-button {
